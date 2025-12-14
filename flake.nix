@@ -11,7 +11,7 @@
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
       packageOverrides = pkgs.callPackage ./python-packages.nix { };
-      python = pkgs.python3.override { inherit packageOverrides; };
+      python = pkgs.python312.override { inherit packageOverrides; };
     in
     {
       devShells.x86_64-linux.default = pkgs.mkShell {
